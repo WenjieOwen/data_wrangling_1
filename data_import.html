@@ -366,9 +366,8 @@ display: none;
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <pre class="r"><code>litters_df = janitor::clean_names(litters_df)</code></pre>
-</div>
-<div id="look-at-the-dataset" class="section level1">
-<h1>Look at the dataset</h1>
+<div id="look-at-the-dataset" class="section level3">
+<h3>Look at the dataset</h3>
 <pre class="r"><code>litters_df</code></pre>
 <pre><code>## # A tibble: 49 × 8
 ##    group litter_number   gd0_weight gd18_weight gd_of_birth pups_born_alive
@@ -408,6 +407,20 @@ display: none;
 ## 6 Low8  #110          25.5       42.7                 20               7
 ## # ℹ 2 more variables: pups_dead_birth &lt;dbl&gt;, pups_survive &lt;dbl&gt;</code></pre>
 <pre class="r"><code>view(litters_df)</code></pre>
+</div>
+</div>
+<div id="import-dataset-fas_pups" class="section level2">
+<h2>Import dataset FAS_pups</h2>
+<p>Use relative path</p>
+<pre class="r"><code>pups_df = read_csv(&quot;data/FAS_pups.csv&quot;)
+
+pups_df = janitor::clean_names(pups_df)
+
+pups_df</code></pre>
+<p>Use absolute path</p>
+<pre class="r"><code>pups_df = read_csv(&quot;/Users/wenjiewu/Desktop/Columbia/Data Science/20120917/data_wrangling_1/data/FAS_pups.csv&quot;)
+
+pups_df</code></pre>
 </div>
 
 
