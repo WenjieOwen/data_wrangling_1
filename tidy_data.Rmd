@@ -54,5 +54,27 @@ litters_df =
   )
 ```
 
+## Private wider
+
+```{r}
+analysis_df = 
+  tibble(
+    group = c("treatment", "treatment", "control", "control"),
+    time = c("pre", "post", "pre", "post"),
+    mean = c(4, 10.5, 3, 5)
+  )
+```
+
+Pivot wider for human readability
+
+```{r}
+analysis_df |>
+  pivot_wider(
+    names_from = time,
+    values_from = mean
+  ) |>
+  knitr::kable()
+```
+
 
 

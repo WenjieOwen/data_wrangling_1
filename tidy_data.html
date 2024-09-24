@@ -398,6 +398,43 @@ display: none;
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div id="private-wider" class="section level2">
+<h2>Private wider</h2>
+<pre class="r"><code>analysis_df = 
+  tibble(
+    group = c(&quot;treatment&quot;, &quot;treatment&quot;, &quot;control&quot;, &quot;control&quot;),
+    time = c(&quot;pre&quot;, &quot;post&quot;, &quot;pre&quot;, &quot;post&quot;),
+    mean = c(4, 10.5, 3, 5)
+  )</code></pre>
+<p>Pivot wider for human readability</p>
+<pre class="r"><code>analysis_df |&gt;
+  pivot_wider(
+    names_from = time,
+    values_from = mean
+  ) |&gt;
+  knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">group</th>
+<th align="right">pre</th>
+<th align="right">post</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">treatment</td>
+<td align="right">4</td>
+<td align="right">10.5</td>
+</tr>
+<tr class="even">
+<td align="left">control</td>
+<td align="right">3</td>
+<td align="right">5.0</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 
